@@ -1,0 +1,13 @@
+RewriteEngine On
+RewriteRule ^ide - [L]
+
+<IfModule mod_rewrite.c>
+## Force SSL
+RewriteEngine On  
+
+## Force no WWW
+RewriteEngine On
+RewriteCond %{HTTP_HOST} ^www.wcwalk.com/LittleUrls [NC]
+RewriteRule ^(.*)$ http://wcwalk.com/LittleUrls/$1 [R=301,L]
+</IfModule>
+RewriteRule (.*) index.php
